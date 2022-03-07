@@ -1,0 +1,42 @@
+.guilds{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.guild{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    margin: auto;
+    padding: 40px;
+    /* background-color: #e0e0e0; */
+    box-shadow: 2px 2px 5px #000;
+
+    width: 300px;
+    word-wrap: break-word;
+
+    font-size: 22px;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+.guild:hover{
+    transform: scale(1.02);
+    color: rgb(10, 105, 69);
+    background-color: rgba(10, 105, 69, 0.35);
+}
+
+.guild img{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}

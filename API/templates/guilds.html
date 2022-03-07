@@ -1,0 +1,15 @@
+{% include 'header.html' %}
+   
+    <main>        
+        <section class="guilds">
+            {% for guild in user_guilds %}
+            <a href="/guilds/{{guild.guild_id}}" class="guild">
+                <img src="{{guild.guild_icon}}" alt="Guild icon of {{guild.guild_name}}">
+                <p>{{guild.guild_name}}</p>
+            </a>
+            {% endfor %}
+        </section>
+    </main>
+
+
+{% include 'footer.html' %}

@@ -1,0 +1,48 @@
+{% include 'header.html' %}
+<body>
+    
+    <main>
+        <section class="header">
+            <h1>Statistics for <span>{{guild_info.guild_name}}</span></h1>
+            {% if guild_info.guild_icon %}
+            <img src={{guild_info.guild_icon}} alt="guild icon" class="guild-icon"/>
+            {% else %}
+            <div class="guild-icon"></div>
+            {% endif %}
+        </section>
+
+        <section class="info-box">
+            <p>Total messages : <span>{{guild_stats.total_messages}}</span></p>
+            <p>Total members : <span>{{guild_stats.total_members}}</span></p>
+        </section>
+
+        <section class="charts">
+            <div>
+                <button class="change-chart-type">Change to line</button>
+                <canvas id="messages"></canvas>
+            </div>
+            <div>
+                <button class="change-chart-type">Change to line</button>
+                <canvas id="trafic"></canvas>
+            </div>
+            <div>
+                <button class="change-chart-type">Change to line</button>
+                <canvas id="reactions"></canvas>
+            </div>
+            <div>
+                <canvas id="invitations"></canvas>
+            </div>
+
+        </section>
+
+    </main>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const data = {{ guild_stats | tojson }};
+    </script>
+    <script src="/static/scripts/guildStats.js"></script>
+
+    
+{% include 'footer.html' %}
